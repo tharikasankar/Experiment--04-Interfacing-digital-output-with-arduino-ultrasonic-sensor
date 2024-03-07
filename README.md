@@ -132,12 +132,13 @@ duration=pulseIn(echoPin,HIGH);
 			
 			
 			
-			
+## Calculation of Average Error			
 			
 			Average error = sum/ number of readings 
  
 
 
+![image](https://github.com/tharikasankar/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/119475507/54b2d53a-ec73-4a75-ac32-05c0ad492676)
 
 
 
