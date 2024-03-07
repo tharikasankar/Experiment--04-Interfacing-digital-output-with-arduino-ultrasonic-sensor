@@ -145,6 +145,8 @@ duration=pulseIn(echoPin,HIGH);
 
 
 ### RESULTS
+Thus the program for the distance measurement using Ultrasonic sensor is been implemented successfully.
+
 
 
 
