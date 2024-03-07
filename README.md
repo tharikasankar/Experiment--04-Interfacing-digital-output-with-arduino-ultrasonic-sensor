@@ -1,5 +1,11 @@
 # EXPERIMENT-NO--05-Distance measurement using Ultrasonic sensor
 
+**Name: Tharika S**
+
+**Reg No: 212222230159**
+
+**Date: 07/03/24**
+
 ## AIM: 
 To interface an ultrasonic pair and measure the distance in centimeters , calculate the error
  
@@ -37,7 +43,10 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 ### FIGURE 01 CIRCUIT OF INTERFACING ULTRASONIC SENSOR 
 
 
-![image](https://user-images.githubusercontent.com/36288975/166430594-5adb4ca9-5a42-4781-a7e6-7236b3766a85.png)
+
+![image](https://github.com/tharikasankar/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/119475507/6e8104de-36c3-4734-ab7e-f1eb17549310)
+
+![image](https://github.com/tharikasankar/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/119475507/d8a72837-592c-4fc6-972e-d53331135ef5)
 
 
 
@@ -55,13 +64,63 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 
 
 ### PROGRAM 
+```
+const int trigPin=10;
+const int echoPin=9;
+int red=7;
+int green=6;
+long duration;
+float distance;
 
+void setup()
+{
+  pinMode(trigPin, OUTPUT);
+   pinMode(echoPin, INPUT);
+  pinMode(red, OUTPUT);
+  pinMode(green, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  digitalWrite(trigPin,LOW);
+  delay(20);
+   digitalWrite(trigPin,HIGH);
+  delay(20);
+  digitalWrite(trigPin,LOW);
+duration=pulseIn(echoPin,HIGH);
+  distance=duration*0.034/2;
+  Serial.print(distance);
+  Serial.println("cms");
+  
+  if(distance >5)
+  {
+    digitalWrite(red,HIGH);
+  delay(200);
+    digitalWrite(red,LOW);
+  delay(200);
+  }
+  else
+  {
+    digitalWrite(green,HIGH);
+  delay(200);
+    digitalWrite(green,LOW);
+  delay(200);
+  }
+      
+}
+```
 
 
 
 
 
 ### Distance vs measurement table 
+![image](https://github.com/tharikasankar/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/119475507/f34740fe-62ad-4a84-9c26-537038410b01)
+
+## Chart:
+![image](https://github.com/tharikasankar/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/119475507/9af960fe-f481-4314-91d1-1e69fc4b9c29)
+
 
 			
  
@@ -69,7 +128,6 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 			
 			
 
-![image](https://user-images.githubusercontent.com/36288975/190135379-52ebacd5-ccd5-460f-a4cd-4d0ad1d9b179.png)
 
 			
 			
